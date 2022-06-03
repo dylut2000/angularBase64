@@ -1,1 +1,18 @@
-<h1>Starting</h1>
+<form>
+  <div class="form-group">
+
+      <label>Upload Image</label>
+      <div class="custom-file fileInputProfileWrap">
+        <div class="row col-md-12">
+          <input type="file" (change)="CreateBase64String($event)" class="fileInputProfile form-control">
+        </div>
+        <hr>
+        <div class="img-space">
+          <ng-container *ngIf="isImageSaved;">
+            <img [src]="cardImageBase64" style="width: 500px;height:500px;" />
+          </ng-container>
+        </div>
+      </div>
+
+  </div>
+</form>

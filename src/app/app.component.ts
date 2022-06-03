@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
   isImageSaved: boolean = false;
   cardImageBase64: string = '';
 
@@ -18,9 +17,9 @@ export class AppComponent {
       reader.onload = (e: any) => {
         const image = new Image();
         image.src = e.target.result;
-        image.onload = rs => {
+        image.onload = (rs) => {
           const imgBase64Path = e.target.result;
-          this.cardImageBase64 = imgBase64Path;         
+          this.cardImageBase64 = imgBase64Path;
           this.isImageSaved = true;
           console.log(imgBase64Path);
         };
